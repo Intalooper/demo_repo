@@ -26,3 +26,30 @@ testkey
 testkey.pub
 johndiaz-leal@MacBook-Pro-2 demo_repo % cat testkey.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCv8WO4VKO8HvBJ0hDicIRD8UQvMNGyDxlbvvZ0GsP1NGkdOgU+vzHH038VLmMZud9w7GRJb6gaepeOWUsFlO1wL0UcsTijO5Mfv40gwmV0k8cOxNPH/hqv6fMT9dyCAciw4Zlyq8g1dmUfyh+mJrDLDSQc5Ejgl2oWVvC3kvz+WLlJ/l5pBLHHu+SLUCLUgV7V8cv6UG6pCxevVODrByuhzgFf925I880Qu9K72xTo7Kn+ykBKLNMSauY4am3VcjoerraqEj0NCb9ttHmbKhkGiinqU3ZV2pRh/+GRDRWJoKugEuhk37nP8QBoELK3eLmgaijTbY3pX5G/PZmsVQ8llLCchaUSzV2KIFgS2IhZZ0F/aFNv1a1ClstKj/+qh0o0WX3s+Df817WSQr3e1p2z5wO7ukyfU5WsWmBGNk6MTB6pFANQD/UPdcVBEhZlxwmW2qmJW3/W2nYVPVjqvpvmNcvzQ6ODfpWChF77VXnvXosWqzx6nfGKKdajKr2mD+Jjdvr0T6Hv7GankZ+NxkIFuJLCjcX7yU/3a/bUWuXJ54+BZIvBiQDNbSq1YP80+4aLFRAGwXPwTmi/Jq1A1lHlkJo0lPYWKKDME0GPm4Iug4cdNle7AiMA5epAUII2KFyVL92dSIBRcU/3VOcXp234Ae07voh8NefNxN5HIA/VZQ== johndiazleal@icloud.com
+
+
+
+#The following info helped me give an SSH key to the SSH Agent 
+
+johndiaz-leal@MacBook-Pro-2 demo_repo % open ~/.ssh/id_ed25519
+johndiaz-leal@MacBook-Pro-2 demo_repo % sudo ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+Identity added: /Users/johndiaz-leal/.ssh/id_ed25519 (johndiazleal@email.com)
+
+1. Start the SSH Agent in the background
+$ eval "$(ssh-agent -s)"
+> Agent pid 59566
+
+2. Check to see if the config file exists in its default location
+$ open ~/.ssh/config
+> The file /Users/YOU/.ssh/config does not exist.
+
+3. Make sure that your config file looks like the following
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+
+4. Add your SSH private key to the SSH agent with the following command
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+5. Add the SSH public key to your account on GitHub
