@@ -1,4 +1,4 @@
-# Homework 3 - Function Documentation 
+# Homework 3 - Function Documentation!
 
 # Purpose of Project Functions 
 1. fibonacci_generator(n)
