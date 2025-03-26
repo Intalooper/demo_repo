@@ -1,0 +1,28 @@
+#Generating an SSH key
+
+johndiaz-leal@MacBook-Pro-2 demo_repo % ssh-keygen -t rsa -b 4096 -C "johndiazleal@icloud.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/johndiaz-leal/.ssh/id_rsa): testkey
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in testkey
+Your public key has been saved in testkey.pub
+The key fingerprint is:
+SHA256:5ACacraO4gtAKBmUGI0B+/AEJHV8qP1snJ+aQh8vSS8 johndiazleal@icloud.com
+The key's randomart image is:
++---[RSA 4096]----+
+|%Oo.o.           |
+|=*.+o..          |
+|B.*o .. .        |
+|oO...  +         |
+|. +  + .S        |
+|.o  . O          |
+|+ .. + * .       |
+|+   . E.=        |
+| o.  .o+         |
++----[SHA256]-----+
+johndiaz-leal@MacBook-Pro-2 demo_repo % ls | grep testkey
+testkey
+testkey.pub
+johndiaz-leal@MacBook-Pro-2 demo_repo % cat testkey.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCv8WO4VKO8HvBJ0hDicIRD8UQvMNGyDxlbvvZ0GsP1NGkdOgU+vzHH038VLmMZud9w7GRJb6gaepeOWUsFlO1wL0UcsTijO5Mfv40gwmV0k8cOxNPH/hqv6fMT9dyCAciw4Zlyq8g1dmUfyh+mJrDLDSQc5Ejgl2oWVvC3kvz+WLlJ/l5pBLHHu+SLUCLUgV7V8cv6UG6pCxevVODrByuhzgFf925I880Qu9K72xTo7Kn+ykBKLNMSauY4am3VcjoerraqEj0NCb9ttHmbKhkGiinqU3ZV2pRh/+GRDRWJoKugEuhk37nP8QBoELK3eLmgaijTbY3pX5G/PZmsVQ8llLCchaUSzV2KIFgS2IhZZ0F/aFNv1a1ClstKj/+qh0o0WX3s+Df817WSQr3e1p2z5wO7ukyfU5WsWmBGNk6MTB6pFANQD/UPdcVBEhZlxwmW2qmJW3/W2nYVPVjqvpvmNcvzQ6ODfpWChF77VXnvXosWqzx6nfGKKdajKr2mD+Jjdvr0T6Hv7GankZ+NxkIFuJLCjcX7yU/3a/bUWuXJ54+BZIvBiQDNbSq1YP80+4aLFRAGwXPwTmi/Jq1A1lHlkJo0lPYWKKDME0GPm4Iug4cdNle7AiMA5epAUII2KFyVL92dSIBRcU/3VOcXp234Ae07voh8NefNxN5HIA/VZQ== johndiazleal@icloud.com
